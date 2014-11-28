@@ -43,8 +43,8 @@ public class RSADemo {
 	
 	/**
 	 * Takes a message as input and returns its cypher text.
-	 * @param	mess		An integer representation of the message to encrypt.
-	 * @return 	message		A BigInteger representation of the encrypted message. 
+	 * @param	mess	An integer representation of the message to encrypt.
+	 * @return	message	A BigInteger representation of the encrypted message. 
 	 */
 	private BigInteger encrypt(int mess) {
 		int intIn = mess;
@@ -58,7 +58,7 @@ public class RSADemo {
 	/**
 	 * Takes a cypher text as input and returns the original message.
 	 * @param	crypt	A BigInteger representation of the encrypted message.
-	 * @return 	dec		A BigInteger representation of the decrypted message.
+	 * @return	dec	A BigInteger representation of the decrypted message.
 	 */
 	private BigInteger decrypt(BigInteger crypt) {
 		crypt = message;
@@ -81,7 +81,7 @@ public class RSADemo {
 	
 	/**
 	 * Takes the user's input.
-	 * @return	num		An integer input by the user.
+	 * @return	num	An integer input by the user.
 	 */
 	private int getInput() {
 	    while (!scan.hasNextInt()) {
@@ -113,14 +113,14 @@ public class RSADemo {
 		
 		while (choice != 0) {
 			switch (choice) {
-				case 0:
+				case 0: // 0) Exit program
 					Quit();
 					break;
-				case 1:
+				case 1: // 1) Generate keys
 					generate();
 					canEncrypt = true;
 					break;
-				case 2:
+				case 2: // 2) Encrypt
 					if (canEncrypt) {
 						System.out.print("Please enter an integer to encrypt: ");
 						encNum = encrypt(getInput());
@@ -129,7 +129,7 @@ public class RSADemo {
 						System.out.println("You must generate the keys before you can encrypt an integer.");
 					}
 					break;
-				case 3:
+				case 3: // 3) Decrypt
 					if (!encNum.equals(BigInteger.ZERO)) {
 						System.out.print("Decrypted integer: ");
 						decrypt(encNum);
@@ -138,7 +138,7 @@ public class RSADemo {
 						System.out.println("You must encrypt an integer before you may decrypt it.");
 					}
 					break;
-				default: 
+				default:
 					System.out.println("Invalid selection.");
 					break;
 			}
