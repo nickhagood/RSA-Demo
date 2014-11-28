@@ -2,7 +2,10 @@ import java.math.BigInteger;
 import java.util.*;
 
 /**
- * @author Nick Hagood
+ * An RSA demo that generates public and private keys that
+ * can be used to encrypt and decrypt a user-supplied integer.
+ * 
+ * @author Nick Hagood 
  * @version Version 1.0
  */
 public class RSADemo {
